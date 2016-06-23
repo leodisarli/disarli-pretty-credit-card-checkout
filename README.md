@@ -10,5 +10,4 @@ https://leodisarli.github.io/pretty-credit-card-checkout/
 - [x] Validate credit card number, expiration date and cvc code.
 - [x] Credit card thumbnail with flip animation.
 - [x] Only allows submit when all fieds validations are ok.
-- [x] Initial project.
 - [ ] Recognize and show credit card flag on thumbnail.
