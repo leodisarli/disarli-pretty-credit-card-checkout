@@ -1,296 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Pretty Credit Card Checkout</title>
-	<link rel="stylesheet" href="css/bootstrap.min.css" >
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/checkout.css">
-	<link rel="stylesheet" href="css/inconsolata.css">
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="js/jquery.payment.min.js"></script>
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-md-5 center-block">
-	            <div class="panel panel-default credit-card-box">
-	                <div class="panel-heading display-table" >
-	                    <div class="row display-tr" >
-	                        <h3 class="panel-title display-td" >Payment Details</h3>
-	                        <div class="display-td" >
-                                <img class="img-responsive" src="img/visa-curved-32px.png">
-                            </div>
-	                        <div class="display-td" >
-								<img class="img-responsive" src="img/mastercard-curved-32px.png">
-	                        </div>
-	                    </div>                    
-	                </div>
-	                <div class="panel-body">
-	                    <form role="form" id="payment-form" method="POST" action="success.html">
-	                       <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="cardNumber">Subscription Value</label>
-                                        <input type="hidden" name="OrderReference" value="123" />
-                                        <p class="subscription-value" >$ 29,90<span class="subscription-recurrency">/month</span></p>
-                                    </div>                            
-                                </div>
-                            </div>
-	                       <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="form-group">
-                                        <label for="cardNumber">Card Holder</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" name="cardHolder" id="cardHolder" placeholder="exactly as on the card" autocomplete="cc-name" required="required" autofocus="autofocus" />
-                                            <span class="input-group-addon">&nbsp;<i class="fa fa-user"></i></span>
-                                        </div>
-                                    </div>                            
-                                </div>
-                            </div>
-	                        <div class="row">
-	                            <div class="col-xs-12">
-	                                <div class="form-group">
-	                                    <label for="cardNumber">Card Number</label>
-	                                    <div class="input-group">
-	                                        <input type="tel" class="form-control" name="cardNumber" id="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required="required"  />
-	                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
-	                                    </div>
-	                                </div>                            
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Pretty Credit Card Checkout</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" >
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/checkout.css">
+		<link rel="stylesheet" href="css/inconsolata.css">
+	    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	    <script type="text/javascript" src="js/jquery.payment.min.js"></script>
+	    <script type="text/javascript" src="js/checkout.js"></script>
+	</head>
+	<body>
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-xs-12 col-md-5 center-block">
+		            <div class="panel panel-default credit-card-box">
+		                <div class="panel-heading display-table" >
+		                    <div class="row display-tr" >
+		                        <h3 class="panel-title display-td" >Payment Details</h3>
+		                        <div class="display-td" >
+	                                <img class="img-responsive" src="img/visa-curved-32px.png">
 	                            </div>
-	                        </div>
-	                        <div class="row">
-	                            <div class="col-xs-7 col-md-7">
-	                                <div class="form-group">
-	                                    <label for="cardExpiry">Expiration Date</label>
-	                                    <input type="tel" class="form-control" name="cardExpiry" id="cardExpiry" placeholder="MM / YYYY" autocomplete="cc-exp" required="required" />
+		                        <div class="display-td" >
+									<img class="img-responsive" src="img/mastercard-curved-32px.png">
+		                        </div>
+		                    </div>                    
+		                </div>
+		                <div class="panel-body">
+		                    <form role="form" id="payment-form" method="POST" action="success.html">
+		                       <div class="row">
+	                                <div class="col-xs-12">
+	                                    <div class="form-group">
+	                                        <label for="cardNumber">Subscription Value</label>
+	                                        <input type="hidden" name="OrderReference" value="123" />
+	                                        <p class="subscription-value" >$ 29,90<span class="subscription-recurrency">/month</span></p>
+	                                    </div>                            
 	                                </div>
 	                            </div>
-	                            <div class="col-xs-5 col-md-5 pull-right">
-	                                <div class="form-group">
-	                                    <label for="cardCVC">Val Code</label>
-	                                    <input type="tel" class="form-control" name="cardCVC" id="cardCVC" placeholder="CVC" autocomplete="cc-csc" required="required" />
-	                                </div>
-	                            </div>
-	                        </div>
-	                        <div class="col-xs-5 col-md-5 center-block">
-				                <div class="credit-card-box-mini">
-									<div class="flip-mini">
-										<div class="front-mini">
-											<div class="chip-mini"></div>
-											<div class="logo-mini">
-												<img src="img/visa-curved-32px.png" class='cc-flag'>
-												<img src="img/mastercard-curved-32px.png" class='cc-flag'>
-											</div>
-											<div class="number-mini" id="cc-number"></div>
-											<div class="card-holder-mini">
-												<label>Card holder</label>
-											  <div id="cc-holder"></div>
-		                                    </div>
-		                                    <div class="card-expiration-date-mini">
-		                                        <label>Expires</label>
-		                                        <div id="cc-expires"></div>
+		                       <div class="row">
+	                                <div class="col-xs-12">
+	                                    <div class="form-group">
+	                                        <label for="cardNumber">Card Holder</label>
+	                                        <div class="input-group">
+	                                            <input type="text" class="form-control" name="cardHolder" id="cardHolder" placeholder="exactly as on the card" autocomplete="cc-name" required="required" autofocus="autofocus" />
+	                                            <span class="input-group-addon">&nbsp;<i class="fa fa-user"></i></span>
 	                                        </div>
-	                                    </div>
-		                                <div class="back-mini">
-		                                    <div class="strip-mini"></div>
-		                                    <div class="logo-mini">
-		                                        <img src="img/visa-curved-32px.png" class='cc-flag'>
-		                                        <img src="img/mastercard-curved-32px.png" class='cc-flag'>
-		                                    </div>
-		                                    <div class="ccv-mini">
-		                                        <label>CCV</label>
-			                                    <div id="cc-ccv"></div>
-			                                </div>
-			                            </div>
+	                                    </div>                            
 	                                </div>
 	                            </div>
-                            </div>
-	                        <div class="row">
-	                            <div class="col-xs-12">
-	                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Authorize</button>
+		                        <div class="row">
+		                            <div class="col-xs-12">
+		                                <div class="form-group">
+		                                    <label for="cardNumber">Card Number</label>
+		                                    <div class="input-group">
+		                                        <input type="tel" class="form-control" name="cardNumber" id="cardNumber" placeholder="Valid Card Number" autocomplete="cc-number" required="required"  />
+		                                        <span class="input-group-addon"><i class="fa fa-credit-card"></i></span>
+		                                    </div>
+		                                </div>                            
+		                            </div>
+		                        </div>
+		                        <div class="row">
+		                            <div class="col-xs-7 col-md-7">
+		                                <div class="form-group">
+		                                    <label for="cardExpiry">Expiration Date</label>
+		                                    <input type="tel" class="form-control" name="cardExpiry" id="cardExpiry" placeholder="MM / YYYY" autocomplete="cc-exp" required="required" />
+		                                </div>
+		                            </div>
+		                            <div class="col-xs-5 col-md-5 pull-right">
+		                                <div class="form-group">
+		                                    <label for="cardCVC">Val Code</label>
+		                                    <input type="tel" class="form-control" name="cardCVC" id="cardCVC" placeholder="CVC" autocomplete="cc-csc" required="required" />
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="col-xs-5 col-md-5 center-block">
+					                <div class="credit-card-box-mini">
+										<div class="flip-mini">
+											<div class="front-mini">
+												<div class="chip-mini"></div>
+												<div class="logo-mini">
+													<img src="img/visa-curved-32px.png" class='cc-flag'>
+													<img src="img/mastercard-curved-32px.png" class='cc-flag'>
+												</div>
+												<div class="number-mini" id="cc-number"></div>
+												<div class="card-holder-mini">
+													<label>Card holder</label>
+												  <div id="cc-holder"></div>
+			                                    </div>
+			                                    <div class="card-expiration-date-mini">
+			                                        <label>Expires</label>
+			                                        <div id="cc-expires"></div>
+		                                        </div>
+		                                    </div>
+			                                <div class="back-mini">
+			                                    <div class="strip-mini"></div>
+			                                    <div class="logo-mini">
+			                                        <img src="img/visa-curved-32px.png" class='cc-flag'>
+			                                        <img src="img/mastercard-curved-32px.png" class='cc-flag'>
+			                                    </div>
+			                                    <div class="ccv-mini">
+			                                        <label>CCV</label>
+				                                    <div id="cc-ccv"></div>
+				                                </div>
+				                            </div>
+		                                </div>
+		                            </div>
 	                            </div>
-	                        </div>
-	                    </form>
-	                </div>
-	            </div>            
-	        </div>            
-	    </div>
-	</div>
-	<script type="text/javascript">
-	
-		var $form = $('#payment-form');
-		$form.find('.subscribe').on('click', sendForm);
-		
-		$('#cardHolder').on('keyup change', function(){
-			$t = $(this);
-			
-			var card_holder = '';
-			card_holder += $(this).val();
-			
-			$('#cc-holder').html(card_holder);
-		});
-		
-		$('#cardNumber').on('keyup change', function(){
-            $t = $(this);
-            
-            var card_number = '';
-            card_number += $(this).val();
-            
-            $('#cc-number').html(card_number);
-        });
-		
-		$('#cardExpiry').on('keyup change', function(){
-            $t = $(this);
-            
-            var card_number = '';
-            card_number += $(this).val();
-            
-            $('#cc-expires').html(card_number);
-        });
-		
-		$('#cardCVC').on('keyup change', function(){
-            $t = $(this);
-            
-            var card_number = '';
-            card_number += $(this).val();
-            
-            $('#cc-ccv').html(card_number);
-        });
-		
-		function sendForm(e) {
-		    //e.preventDefault();
-			if (!validator.form()) {
-			    return false;
-			}
-			$form.find('.subscribe').html('Validating <i class="fa fa-spinner fa-pulse"></i>').prop('disabled', true);
-			$('#cardHolder').attr('readonly','readonly');
-			$('#cardNumber').attr('readonly','readonly');
-			$('#cardExpiry').attr('readonly','readonly');
-			$('#cardCVC').attr('readonly','readonly');
-			$form.find('.subscribe').html('Processing <i class="fa fa-spinner fa-pulse"></i>');
-			$form.submit();
-		}
-		
-		$('input[name=cardNumber]').payment('formatCardNumber');
-		$('input[name=cardCVC]').payment('formatCardCVC');
-		$('input[name=cardExpiry').payment('formatCardExpiry');
-		
-		$.validator.addMethod("cardNumber", function(value, element) {
-		    return this.optional(element) || validateCardNumber(value);
-		}, "Please specify a valid credit card number.");
-		
-		$.validator.addMethod("cardExpiry", function(value, element) {    
-		    value = $.payment.cardExpiryVal(value);
-		    return this.optional(element) || validateExpiry(value.month, value.year);
-		}, "Invalid expiration date.");
-		
-		$.validator.addMethod("cardCVC", function(value, element) {
-		    return this.optional(element) || validateCVC(value);
-		}, "Invalid CVC.");
-	
-	    validator = $form.validate({
-			rules: {
-				cardHolder: {
-                    required: true,
-                },
-				cardNumber: {
-					required: true,
-					cardNumber: true            
-				},
-				cardExpiry: {
-					required: true,
-					cardExpiry: true
-				},
-				cardCVC: {
-					required: true,
-					cardCVC: true
-				}
-			},
-			messages: {
-		        cardHolder: {
-		            required: "Required",
-		        },
-		        cardNumber: {
-                    required: "Required",
-                },
-                cardExpiry: {
-                    required: "Required",
-                },
-                cardCVC: {
-                    required: "Required",
-                },
-		    },
-			highlight: function(element) {
-				$(element).closest('.form-control').removeClass('success').addClass('error');
-			},
-			unhighlight: function(element) {
-				$(element).closest('.form-control').removeClass('error').addClass('success');
-			},
-			errorPlacement: function(error, element) {
-				$(element).closest('.form-group').append(error);
-			}
-		});
-	
-		paymentFormReady = function() {
-			if ($form.find('[name=cardNumber]').hasClass("success") &&
-				$form.find('[name=cardExpiry]').hasClass("success") &&
-				$form.find('[name=cardCVC]').val().length > 2) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-	
-		$form.find('.subscribe').prop('disabled', true);
-		var readyInterval = setInterval(function() {
-			if (paymentFormReady()) {
-				$form.find('.subscribe').prop('disabled', false);
-			} else {
-				$form.find('.subscribe').prop('disabled', true);
-			}
-		}, 250);
-	
-		function validateCardNumber(value) {
-		    if (/[^0-9-\s]+/.test(value)) return false;
-		    var nCheck = 0, nDigit = 0, bEven = false;
-		    value = value.replace(/\D/g, "");
-		    for (var n = value.length - 1; n >= 0; n--) {
-		        var cDigit = value.charAt(n),
-		              nDigit = parseInt(cDigit, 10);
-		        if (bEven) {
-		            if ((nDigit *= 2) > 9) nDigit -= 9;
-		        }
-		        nCheck += nDigit;
-		        bEven = !bEven;
-		    }
-		    return (nCheck % 10) == 0;
-		}
-		
-		function validateExpiry(month, year) {
-			var today = new Date();
-			var someday = new Date();
-			var thisYear = today.getFullYear();
-			var lastYear = thisYear + 20;
-			someday.setFullYear(year, month, 1);
-			if (someday < today) {
-			   return false;
-			}
-			if (year > lastYear) {
-               return false;
-            }
-		    return true;
-		}
-		
-		function validateCVC(value) {
-			if (value.length<3) {
-                return false;
-            }
-            return true;
-		}
-	</script>
-</body>
+		                        <div class="row">
+		                            <div class="col-xs-12">
+		                                <button class="subscribe btn btn-success btn-lg btn-block" type="button">Authorize</button>
+		                            </div>
+		                        </div>
+		                    </form>
+		                </div>
+		            </div>            
+		        </div>            
+		    </div>
+		</div>
+	</body>
 </html>
