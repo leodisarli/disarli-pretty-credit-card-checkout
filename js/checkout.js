@@ -3,28 +3,24 @@ $( document ).ready(function() {
 	$form.find('.subscribe').on('click', sendForm);
 	
 	$('#cardHolder').on('keyup change', function(){
-		$t = $(this);
 		var card_holder = '';
 		card_holder += $(this).val();
 		$('#cc-holder').html(card_holder);
 	});
 	
 	$('#cardNumber').on('keyup change', function(){
-	    $t = $(this);
 	    var card_number = '';
 	    card_number += $(this).val();
 	    $('#cc-number').html(card_number);
 	});
 	
 	$('#cardExpiry').on('keyup change', function(){
-	    $t = $(this);
 	    var card_number = '';
 	    card_number += $(this).val();
 	    $('#cc-expires').html(card_number);
 	});
 	
 	$('#cardCVC').on('keyup change', function(){
-	    $t = $(this);
 	    var card_number = '';
 	    card_number += $(this).val();
 	    $('#cc-ccv').html(card_number);
