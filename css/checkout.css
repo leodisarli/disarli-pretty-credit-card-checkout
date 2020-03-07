@@ -1,0 +1,218 @@
+body {
+	margin-top:40px;
+	font-size: 15px;
+}
+.credit-card-box .panel-title {
+    display: inline;
+    font-weight: bold;
+}
+.credit-card-box .form-control.error {
+    border-color: red;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(255,0,0,0.6);
+}
+.credit-card-box label.error {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+.credit-card-box .payment-errors {
+    font-weight: bold;
+    color: red;
+    padding: 2px 8px;
+    margin-top: 2px;
+}
+.credit-card-box label {
+    display: block;
+}
+.credit-card-box .display-table {
+	display: table;
+	margin-bottom:40px;
+}
+.credit-card-box .display-tr {
+    display: table-row;
+}
+.credit-card-box .display-td {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	padding-right: 10px;
+}
+.credit-card-box .panel-heading img {
+    min-width: 50px;
+}
+.center-block{
+    float: none;
+}
+.credit-card-box-mini {
+	width: 362px;
+	height: 226px;
+	margin-top: 20px;
+	margin-bottom: 45px;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.credit-card-box-mini:hover .flip-mini, .credit-card-box.hover-mini .flip-mini {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.credit-card-box-mini .front-mini,
+.credit-card-box-mini .back-mini {
+	width: 362px;
+	height: 226px;
+	border-radius: 10px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	background: -webkit-linear-gradient(315deg, #67bd6f, #22534a);
+	background: linear-gradient(135deg, #67bd6f, #22534a);
+	position: absolute;
+	color: #fff;
+	font-family: Inconsolata;
+	top: 0;
+	left: 0;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+.credit-card-box-mini .front-mini::before,
+.credit-card-box-mini .back-mini::before {
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: url("../img/globe.svg") no-repeat center;
+	background-size: cover;
+	opacity: .05;
+}
+.credit-card-box-mini .flip-mini {
+	-webkit-transition: 0.6s;
+	transition: 0.6s;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	position: relative;
+}
+.credit-card-box-mini .logo-mini {
+	position: absolute;
+	top: 9px;
+	right: 20px;
+	width: 60px;
+}
+.credit-card-box-mini .logo-mini img {
+	width: 100%;
+	height: auto;
+}
+.credit-card-box-mini .front-mini {
+	z-index: 2;
+	-webkit-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+.credit-card-box-mini .back-mini {
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.credit-card-box-mini .back-mini .logo-mini {
+    top: 185px;
+}
+.credit-card-box-mini .chip-mini {
+	position: absolute;
+	width: 55px;
+	height: 40px;
+	top: 50px;
+	left: 41px;
+	background: -webkit-linear-gradient(315deg, #ddccf0 0%, #d1e9f5 44%, #f8ece7 100%);
+	background: linear-gradient(135deg, #ddccf0 0%, #d1e9f5 44%, #f8ece7 100%);
+	border-radius: 4px;
+	opacity: .3;
+}
+.credit-card-box-mini .chip-mini::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	border: 4px solid rgba(128, 128, 128, 0.1);
+	width: 80%;
+	height: 70%;
+	border-radius: 4px;
+}
+.credit-card-box-mini .strip-mini {
+	background: -webkit-linear-gradient(315deg, #404040, #1a1a1a);
+	background: linear-gradient(135deg, #404040, #1a1a1a);
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	top: 30px;
+	left: 0;
+}
+.credit-card-box-mini .number-mini {
+	position: absolute;
+	margin: 0 auto;
+	top: 90px;
+	left: 39px;
+	font-size: 30px;
+}
+.credit-card-box-mini label {
+	font-size: 10px;
+	letter-spacing: 1px;
+	text-shadow: none;
+	text-transform: uppercase;
+	font-weight: normal;
+	opacity: 0.5;
+	display: block;
+	margin-bottom: 3px;
+}
+.credit-card-box-mini .card-holder-mini,
+.credit-card-box-mini .card-expiration-date-mini {
+	position: absolute;
+	margin: 0 auto;
+	top: 160px;
+	left: 19px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+.credit-card-box-mini .card-expiration-date-mini {
+	text-align: right;
+	left: auto;
+	right: 20px;
+}
+.credit-card-box-mini .ccv-mini {
+	height: 36px;
+	background: #fff;
+	width: 91%;
+	border-radius: 5px;
+	top: 110px;
+	left: 0;
+	right: 0;
+	position: absolute;
+	margin: 0 auto;
+	color: #000;
+	text-align: right;
+	padding: 10px;
+}
+.credit-card-box-mini .ccv-mini label {
+	margin: -25px 0 14px;
+	color: #fff;
+}
+#cc-ccv {
+	font-size: 20px;
+	position: relative;
+	top: -10px;
+}
+.cc-flag {
+    display: none;
+}
+#cardHolder {
+	text-transform: uppercase; !important
+}
+.subscription-value {
+	font-size: 30px;
+	color: #246733;
+}
+.subscription-recurrency {
+	font-size: 20px;
+    color: #246733;
+}
